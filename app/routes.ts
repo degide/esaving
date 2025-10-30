@@ -1,7 +1,7 @@
-import { type RouteConfig, index, route, layout, prefix } from "@react-router/dev/routes";
+import { type RouteConfig, index, route } from "@react-router/dev/routes";
 
 export default [
-    index("./routes/splash.tsx"),
+    index("./routes/splash.tsx", {id: "splash"}),
 
     route("login", "./routes/login.tsx"),
     route("register", "./routes/register.tsx"),

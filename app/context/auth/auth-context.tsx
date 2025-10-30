@@ -91,13 +91,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const logout = async () => {
-    await AuthApi.logout();
     setUser(null);
     setRole(null);
     setToken(null);
     localStorage.removeItem('authToken');
     localStorage.removeItem('refreshToken');
     localStorage.removeItem('authUser');
+    await AuthApi.logout();
 
   };
 
