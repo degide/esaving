@@ -1,9 +1,8 @@
 import { Link, Navigate, Outlet } from "react-router";
 import type { Route } from "./+types/admin";
 import { LayoutDashboard, Users, CreditCard, Settings, ShieldCheck } from "lucide-react";
-import Header from "../components/common/header";
+import Header from "../components/common/Header";
 import { useLocation } from "react-router";
-import { EUserRole } from "~/types/common/enum";
 import { useAuth } from "~/context/auth/auth-context";
 
 export function meta({}: Route.MetaArgs) {
@@ -48,7 +47,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   to={item.href}
                   className={`
                     group flex items-center rounded-lg px-3 py-2 text-sm font-medium
-                    ${location.pathname.startsWith(item.href)
+                    ${location.pathname === item.href
                       ? 'bg-indigo-50 text-indigo-700'
                       : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}
                   `}

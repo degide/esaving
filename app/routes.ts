@@ -8,6 +8,7 @@ export default [
 
     route("admin", "./layouts/admin.tsx", [
         index("./routes/admin/home.tsx"),
+        route("users", "./routes/admin/users.tsx"),
     ]),
 
     route("customer", "./layouts/customer.tsx", [

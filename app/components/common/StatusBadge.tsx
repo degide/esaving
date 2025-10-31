@@ -1,3 +1,5 @@
+import { humanizeEnum } from "~/utils";
+
 export default function StatusBadge({ status }: { status: string }) {
   const statusMap: Record<string, string> = {
     // General
@@ -16,8 +18,8 @@ export default function StatusBadge({ status }: { status: string }) {
 
   const style = statusMap[status] || 'bg-slate-100 text-slate-800';
   return (
-    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${style}`}>
-      {status.replace('_', ' ')}
+    <span className={`inline-flex items-center px-2 py-1.5 rounded-full text-xs ${style}`}>
+      {humanizeEnum(status)}
     </span>
   );
 }

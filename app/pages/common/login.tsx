@@ -1,6 +1,6 @@
 import { ShieldCheck } from "lucide-react";
 import { useState } from "react";
-import { useNavigate, useLocation, Link } from "react-router";
+import { useNavigate, Link } from "react-router";
 import Button from "~/components/common/Button";
 import Card from "~/components/common/Card";
 import CardContent from "~/components/common/CardContent";
@@ -15,7 +15,6 @@ export default function LoginPage(){
     const [isLoading, setIsLoading] = useState(false);
     const { login } = useAuth();
     const navigate = useNavigate();
-    const location = useLocation();
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -24,15 +23,9 @@ export default function LoginPage(){
         try {
             await login({username: email, password: password});
             const userRole = JSON.parse(localStorage.getItem('authUser') || 'null')?.role;
-            
-            const from = location.state?.from?.pathname;
 
-            if (from && from !== '/login') {
-                navigate(from, { replace: true });
-            } else {
-                const homePath = userRole === userRole.ADMIN ? '/admin' : '/customer';
-                navigate(homePath, { replace: true });
-            }
+            const homePath = userRole === userRole.ADMIN ? '/admin' : '/customer';
+            navigate(homePath, { replace: true });
         } catch (err: any) {
             setError(err.message);
         } finally {
