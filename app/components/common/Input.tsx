@@ -10,15 +10,15 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 export default function Input({ id, type = 'text', label, placeholder, value, onChange, ...props }: InputProps) {
   return (
     <div>
-      {label && <label htmlFor={id} className="block text-sm font-medium text-slate-700 mb-1">{label}</label>}
+      {label && <label htmlFor={id} className="block text-md font-medium text-slate-700 mb-1">{label}</label>}
       <input
         id={id}
         type={type}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="block w-full rounded-lg border border-slate-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         {...props}
+        className={`block w-full rounded-lg border border-slate-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm ${props.className}`}
       />
     </div>
   );

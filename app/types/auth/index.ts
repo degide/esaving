@@ -23,6 +23,16 @@ export type LoginDTO = {
     password: string;
 }
 
+export type RegisterDTO = {
+    firstName: string;
+    middleName?: string;
+    lastName: string;
+    email: string;
+    password: string;
+    gender: EGender;
+    role: EUserRole;
+}
+
 export type LoginResBodyDataDTO = {
     token: string;
     refreshToken: string;

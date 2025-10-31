@@ -13,7 +13,7 @@ export default function PasswordInput({ id, label, placeholder, value, onChange,
   const [show, setShow] = useState(false);
   return (
     <div>
-      {label && <label htmlFor={id} className="block text-sm font-medium text-slate-700 mb-1">{label}</label>}
+      {label && <label htmlFor={id} className="block text-md font-medium text-slate-700 mb-1">{label}</label>}
       <div className="relative">
         <input
           id={id}

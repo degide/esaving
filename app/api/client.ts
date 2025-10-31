@@ -23,6 +23,8 @@ Client.interceptors.request.use(
 
 export const refineAndThrowError = (err: any, message?: string) => {
     if(isAxiosError(err)) {
-        throw new Error(message || err.response?.data?.message || "Request failed. Please contact system admin.");
+        if(err.response?.data?.message?.toLowerCase().includes("User is not activated".toLowerCase())) {
+            throw new Error("Your account is not activated. Please contact system admin.");
+        } else throw new Error(message || err.response?.data?.message || "Request failed. Please contact system admin.");
     } else throw err;
 }

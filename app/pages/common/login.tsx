@@ -1,6 +1,6 @@
 import { ShieldCheck } from "lucide-react";
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router";
+import { useNavigate, useLocation, Link } from "react-router";
 import Button from "~/components/common/Button";
 import Card from "~/components/common/Card";
 import CardContent from "~/components/common/CardContent";
@@ -80,6 +80,9 @@ export default function LoginPage(){
                                 Sign in
                             </Button>
                         </form>
+                        <div>
+                            <span>Don't have an account? <Link to="/register" className="text-indigo-800 hover:text-indigo-700">Sign up</Link></span>
+                        </div>
                     </CardContent>
                 </Card>
             </div>

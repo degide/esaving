@@ -1,4 +1,4 @@
-import type { LoginDTO, LoginResBodyDataDTO, UserProfileResBodyDataDTO } from "~/types/auth";
+import type { LoginDTO, LoginResBodyDataDTO, RegisterDTO, User, UserProfileResBodyDataDTO } from "~/types/auth";
 import { Client, refineAndThrowError } from "./client";
 import type { ResBodyDTO } from "~/types/common";
 
@@ -9,6 +9,15 @@ export class AuthApi {
             return response.data;
         } catch (err: any) {
             refineAndThrowError(err, "Invalid username or password.");
+        }
+    }
+
+    static async register(dto: RegisterDTO) {
+        try {
+            const response = await Client.post<ResBodyDTO<User>>("/users", dto);
+            return response.data;
+        } catch (err: any) {
+            refineAndThrowError(err);
         }
     }
 

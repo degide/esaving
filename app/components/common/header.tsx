@@ -9,7 +9,6 @@ export default function Header() {
   const [notifications, setNotifications] = useState<any[]>([]);
   const [showNotif, setShowNotif] = useState(false);
   
-  // Fetch notifications
   useEffect(() => {
     if (user) {
       setNotifications([]);

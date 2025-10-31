@@ -1,7 +1,7 @@
 import { Link, Navigate, Outlet } from "react-router";
 import type { Route } from "./+types/admin";
 import { LayoutDashboard, Users, CreditCard, Settings, ShieldCheck } from "lucide-react";
-import Header from "./header";
+import Header from "../components/common/header";
 import { useLocation } from "react-router";
 import { EUserRole } from "~/types/common/enum";
 import { useAuth } from "~/context/auth/auth-context";
@@ -38,7 +38,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="flex h-0 flex-1 flex-col overflow-y-auto border-r border-slate-200 bg-white">
           <div className="flex h-16 shrink-0 items-center border-b border-slate-200 px-6">
             <ShieldCheck className="h-8 w-auto text-indigo-600" />
-            <span className="ml-2 text-xl font-bold text-slate-800">eSaving / Admin</span>
+            <span className="ml-2 text-2xl font-bold text-slate-800">eSaving</span>
           </div>
           <div className="flex-1 overflow-y-auto py-6">
             <div className="space-y-1 px-4">
