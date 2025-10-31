@@ -23,7 +23,7 @@ export class AuthApi {
 
     static async getUserProfile() {
         try {
-            const response = await Client.get<ResBodyDTO<UserProfileResBodyDataDTO>>("/users/user-profile");
+            const response = await Client.get<ResBodyDTO<UserProfileResBodyDataDTO>>("/users/userProfile");
             return response.data;
         } catch (err: any) {
             refineAndThrowError(err);

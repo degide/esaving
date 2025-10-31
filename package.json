@@ -1,7 +1,15 @@
 {
   "name": "esaving",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
+  "license": "MIT",
+  "description": "Frontend for Digital Credit & Savings Platform",
+  "author": {
+    "name": "Egide Harerimana",
+    "email": "egideharerimana085@gmail.com",
+    "url": "https://github.com/degide"
+  },
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",

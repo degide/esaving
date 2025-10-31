@@ -22,7 +22,7 @@ export class UserApi {
 
     static async approveUser(userId: number) {
         try {
-            const response = await Client.put(`/users/approve-user/${userId}`);
+            const response = await Client.put(`/users/approveUser/${userId}`);
             return response.data!;
         } catch (err: any) {
             refineAndThrowError(err, "User approval failed");
@@ -31,7 +31,7 @@ export class UserApi {
 
     static async suspendUser(userId: number) {
         try {
-            const response = await Client.put(`/users/suspend-user/${userId}`);
+            const response = await Client.put(`/users/suspendUser/${userId}`);
             return response.data!;
         } catch (err: any) {
             refineAndThrowError(err, "User suspension failed");
@@ -41,7 +41,7 @@ export class UserApi {
 
     static async activateUser(userId: number) {
         try {
-            const response = await Client.put(`/users/activate-user/${userId}`);
+            const response = await Client.put(`/users/activateUser/${userId}`);
             return response.data!;
         } catch (err: any) {
             refineAndThrowError(err, "User activation failed");
