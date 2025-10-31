@@ -1,4 +1,4 @@
-# Welcome to React Router!
+# eSaving
 
 A frontend project for the eSaving (Credit Jambo) technical test. Built with ReactJs + TailwindCss. It incorporates role-based authentication for both customers and admins with a wide range of features including authentication (JWT + Refresh Tokens), savings, loans and profile management.
 
